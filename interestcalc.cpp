@@ -15,7 +15,7 @@ double N; // number of years to calculate
 
 // user variable input
 cout << "Enter the Initial Deposit" << endl;
-cin >> X; 
+cin >> X;
 cout << "Enter the number of years" << endl;
 cin >> N;
 cout << "Enter the interest rate" << endl;
@@ -31,3 +31,4 @@ cout << "The amount available if" << X
 << " years at " << R
 << " interest rate is " << A << endl;
 }
+
