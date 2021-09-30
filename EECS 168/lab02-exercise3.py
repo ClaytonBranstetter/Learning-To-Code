@@ -1,3 +1,11 @@
+'''
+Author: Clayton Branstetter
+KUID: 3089206
+Date: 09/29/2021
+Lab: lab#02
+Last modified: 09/29/2021
+Purpose: Restaurant exercise
+'''
 print("============================")
 print("WELCOME TO THE RESTAURANT")
 print("============================")
