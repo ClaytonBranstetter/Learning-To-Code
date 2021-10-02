@@ -3,7 +3,7 @@ Author: Clayton Branstetter
 KUID: 3089206
 Date: 09/30/2021
 Lab: lab#03
-Last modified: 09/30/2021
+Last modified: 10/01/2021
 Purpose: Outbreak!
 '''
 
@@ -28,8 +28,8 @@ def fibonacci(n):
 
 
 while(True):
-  day = input("What day do you want a sick count for?: ")
-  if int(day) <= 0:
+    day = input("What day do you want a sick count for?: ")
+if int(day) <= 0:
     print("Invalid day")
-  else:
+else:
     print("Total people with flue: {}".format(fibonacci(day)))
