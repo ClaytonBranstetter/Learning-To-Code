@@ -8,16 +8,13 @@ Purpose: Going to the Grocery Store
 '''
 
 import sys
-
 # Create the main menu
 def main_menu():
   while(True):
 
     print()
     print('''Welcome to your Shopping List!
-
     Select a number for the action you would to do:
-
     1) View shopping list
     2) Add item to shopping list
     3) Check off item from shopping list
@@ -27,10 +24,8 @@ def main_menu():
     7) Print shopping list
     8) Exit
     ''')
-
     # Ask the user to make a selection
     selection = input("Make your selection: ")
-
     # Determine which action to perfrom based on the user's selection
     if selection == "1":
       display_list()
@@ -94,8 +89,6 @@ def clear_list():
 def print_list():
   print("Here is your shopping list")
   print(*shopping_list, sep = "\n")
-
-
 
 # Run the function main_menu - which will run the shopping list app
 main_menu()
