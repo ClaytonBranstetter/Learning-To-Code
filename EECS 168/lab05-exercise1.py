@@ -20,8 +20,6 @@ def display_url(URL):
 def display_history():
   print("Oldest")
   print("===========")
-
-
   i = 0
   want = CurrentListItem
   for historyitem in BROWSERHISTORY:
@@ -34,25 +32,26 @@ def display_history():
 
   # Ask the user to enter a command
 while(True):
-  command = input("Enter a command: ").split()
+  userinput = input("Enter a command: ").split()
+  command = userinput[0].upper()
   # Determine what to do based on the user's input
-  if command[0].upper() == "NAVIGATE":
+  if command == "NAVIGATE":
     myurl = command[1]
     CurrentListItem = CurrentListItem + 1
     display_url(URL=myurl)
-  elif command[0].upper() == "BACK":
+  elif command == "BACK":
     CurrentListItem = CurrentListItem - 1
     if CurrentListItem < 1:
       CurrentListItem = 1
     #print("DEBUG: CurrentListItem {}".format(CurrentListItem))
-  elif command[0].upper() == "FORWARD":
+  elif command == "FORWARD":
     CurrentListItem = CurrentListItem + 1
     if CurrentListItem > len(BROWSERHISTORY):
       CurrentListItem = len(BROWSERHISTORY)
     #print("DEBUG: CurrentListItem2 {}".format(CurrentListItem))
-  elif command[0].upper() == "HISTORY":
+  elif command == "HISTORY":
     pass
-  elif command[0].upper() == "EXIT":
+  elif command == "EXIT":
     print("Thanks for using my browser. ")
     # Exit input and loop
     break
