@@ -57,3 +57,6 @@ while(True):
 
     else:
       print("Invalid Input, please try again.")
+
+
+exit()
