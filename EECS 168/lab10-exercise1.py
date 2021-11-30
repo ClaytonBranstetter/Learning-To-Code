@@ -1,9 +1,9 @@
 '''
 Author: Clayton Branstetter
 KUID: 3089206
-Date: 11/28/2021
+Date: 11/30/2021
 Lab: lab#10
-Last modified: 11/28/2021
+Last modified: 11/30/2021
 Purpose: Class & Methods
 '''
 
