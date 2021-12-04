@@ -7,7 +7,6 @@ Last modified: 11/04/2021
 Purpose: Calculator
 '''
 
-import sys
 
 # This function adds two numbers
 def add(x, y):
@@ -59,4 +58,3 @@ while(True):
       print("Invalid Input, please try again.")
 
 
-exit()
