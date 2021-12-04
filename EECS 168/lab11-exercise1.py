@@ -1,18 +1,11 @@
 '''
 Author: Clayton Branstetter
 KUID: 3089206
-Date: 11/30/2021
-Lab: lab#10
-Last modified: 11/30/2021
+Date: 12/04/2021
+Lab: lab#11
+Last modified: 12/04/2021
 Purpose: Class & List for DMV
 '''
-
-"""with open("records.txt" ,"r") as file:
-    f = file.read()
-    for row in f.split("\n"):
-        print(row.split('\t'))
-"""
-
 
 class DriversLicense:
     def __init__(self, data):
@@ -35,10 +28,11 @@ class DriversLicense:
 
 class DMV:
     def __init__(self, filename):
+        self.filename = filename
         with open(filename, 'r') as file:
-            data = file.read().split('\n')
-            self.n_entries = data[0]
-            self.dl = [DriversLicense(row) for row in data[1:]]
+            self.data = file.read().split('\n')
+            self.n_entries = int(self.data[0])
+            self.dl = [DriversLicense(row) for row in self.data[1:]]
 
     def all_driver(self):
         for driver in self.dl:
@@ -57,6 +51,7 @@ class DMV:
             if driver._f_name[0] == letter:
                 print(driver)
                 exist = True
+                break
         if not exist:
             print("No record found.")
 
@@ -71,22 +66,49 @@ class DMV:
         if not exist:
             print("No record found.")
 
+    def register(self):
+        license = int(input("Enter a drivers license number : "))
+        exist = False
+        for driver in self.dl:
+            if driver._l_number == license:
+                if driver._registered == 'N':
+                    driver._registered = 'Y'
+                else:
+                    print("\nDriver currently registered")
+                exist = True
+                break
+        if not exist:
+            print("\nNo record found.")
+
+    def save(self):
+        text = str(self.n_entries) + '\n'
+        with open(self.filename, 'w') as file:
+            i = 1
+            for driver in self.dl:
+                text += f"{driver._l_number}\t{driver._f_name}\t{driver._l_name}\t{driver._age }\t{driver._registered}"
+                if i != self.n_entries:
+                    text += "\n"
+                    i += 1
+            file.write(text)
+
     def menu(self):
         print("\nSelect an option:")
         print("1) Print all Drivers Info")
         print("2) Print all young, unregistered voters")
         print("3) Print drivers by first initial")
         print("4) Print driver with id")
-        print("5) Quit\n")
+        print("5) Register to vote")
+        print("6) Quit\n")
         choice = input("Enter your choice: ")
         print()
-        if choice.isdigit() and "1" <= choice <= "5":
+        if choice.isdigit() and "1" <= choice <= "6":
             return int(choice)
         return self.menu()
 
     def run(self):
         choice = self.menu()
-        if choice == 5:
+        if choice == 6:
+            self.save()
             return 0
         if choice == 1:
             self.all_driver()
@@ -96,6 +118,8 @@ class DMV:
             self.f_initial()
         elif choice == 4:
             self.by_id()
+        elif choice == 5:
+            self.register()
         return self.run()
 
 
