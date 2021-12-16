@@ -3,6 +3,8 @@ def bouncer(age):
     print("Come in")
   if not int(age) >= 21:
     print("scram, junior!")
+  if int(age) < 0:
+    print("ERROR")
 
 
 while(True):
