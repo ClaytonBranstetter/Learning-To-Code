@@ -11,7 +11,7 @@ Purpose: Good Old Fibonacci
 def fibonacci(n):
         """ Calculation of the fibonacci sequence for a given n>=0"""
         if n==0 or n==1:
-            return 0 # fibonacci(0) = 1 or fibonacci(1) = 1
+            return 1 # fibonacci(0) = 1 or fibonacci(1) = 1
         return fibonacci(n-1) + fibonacci(n-2) # Fi=Fi-1 + Fi-2 if i>1
 
 def main():
@@ -39,5 +39,6 @@ def main():
                 print(f"{n} is not in the sequence")
     except:
         print('invalid input')
+
 
 main()

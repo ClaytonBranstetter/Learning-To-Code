@@ -22,3 +22,4 @@ def main():
         power = int(input("Enter a power: "))
     print("Answer: ", pow(base, power))
 
+main()

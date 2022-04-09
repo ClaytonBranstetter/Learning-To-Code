@@ -24,8 +24,9 @@ def main():
         day = int(input("What day do you want a sick count for?: "))
         if day<1: #the day must be 1 or larger
             raise RuntimeError
-        print(f"Total people with flu: {day}")
+        print(f"Total people with flu: {flu(day)}")
     except:
         print("invalid day")
 
 
+main()
