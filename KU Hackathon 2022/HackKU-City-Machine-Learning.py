@@ -48,7 +48,7 @@ if predicting:
     y_pred = regressor.predict(X_test)
 
     b_regressor = BaggingRegressor(regressor, n_estimators=100, max_features=len(X[0]),
-                                  max_samples=.5)
+                                max_samples=.5)
     b_regressor.fit(X_train, np.ravel(y_train))
 else:
     regressor.fit(X, np.ravel(y))
@@ -58,7 +58,7 @@ else:
     y_pred = regressor.predict(X)
 
     b_regressor = BaggingRegressor(regressor, n_estimators=100, max_features=len(X[0]),
-                                  max_samples=.5)
+                                max_samples=.5)
     b_regressor.fit(X, np.ravel(y))
 
 X = [list(x) for x in zip(*X)]
@@ -74,7 +74,7 @@ while True:
     print("")
     chars_to_remove = list(',$%')
     test_input = input("Enter " + ", ".join(column_names_all) +
-                      ": ").translate({ord(x): '' for x in chars_to_remove})
+                    ": ").translate({ord(x): '' for x in chars_to_remove})
     test_input = [float(x) for x in test_input.split()]
     print("Input:")
     print(test_input)
@@ -88,7 +88,7 @@ while True:
         test_chg_max[index + 2] += atr_chg[index]
         test_chg_min[index + 2] -= atr_chg[index]
         pred_change.append([b_regressor.predict([test_chg_max])[
-                          0], b_regressor.predict([test_chg_min])[0]])
+                        0], b_regressor.predict([test_chg_min])[0]])
     improvement = [0]
     for p_index, col in enumerate(pred_change):
         for c_index, pred in enumerate(col):
