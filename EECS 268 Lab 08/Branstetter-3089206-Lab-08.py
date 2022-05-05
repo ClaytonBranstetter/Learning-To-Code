@@ -20,7 +20,7 @@ class tree:
         self.left = None
 
     def insert(self, ndata_item):
-        #create new node
+        # create new node
         if self is None:
             return tree(data_item=ndata_item)
 
@@ -118,35 +118,35 @@ def format(file_name):
 
 def menu():
     print("\n1- Search\n2- Add\n3- Print\n4- Quit\n")
-    n = input("Choose an option : ")
+    n = input(" Choose an option : ")
     if n.isdigit() and (n in ["1","2","3","4"]):
         return int(n)
-    print("invalid input\n")
+    print(" invalid input\n")
     return menu()
 
 def main():
-    file_name = input("Enter the file name : ")
+    file_name = input(" Enter the file name : ")
     Pokedex = format(file_name)
     n = menu()
     while n:
         if n == 1:
-            key = input("Enter a pokedex id : ")
+            key = input(" Enter a pokedex id : ")
             if key.isdigit():
                 Pokedex.search(int(key))
 
         elif n == 2:
-            US_name = input("Enter the us name : ")
-            number = input("Enter the pokedex id : ")
-            JP_name = input("Enter the jp name : ")
+            US_name = input(" Enter the us name : ")
+            number = input(" Enter the pokedex id : ")
+            JP_name = input(" Enter the jp name : ")
             if number.isdigit():
                 data_item = Data_item(US_name, number, JP_name)
                 try:
                     Pokedex.insert(data_item)
                 except:
-                    print("pokemon already exist\n")
+                    print(" pokemon already exist\n")
 
         elif n == 3:
-            order = input("Enter the Traversal order, in, pre, or post order (in,pre,post): ").lower().strip()
+            order = input(" Enter the Traversal order, in, pre, or post order (in,pre,post): ").lower().strip()
             if order == 'in':
                 Pokedex.inorder()
             elif order == 'pre':
