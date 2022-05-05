@@ -1,4 +1,11 @@
-
+'''
+Author: Clayton Branstetter
+KUID: 3089206
+Date: 04/25/2022
+Lab: lab#09
+Last modified: 05/05/2022
+Purpose: BSTs Phase 1
+'''
 
 
 class Data_item:

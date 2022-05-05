@@ -1,9 +1,18 @@
+'''
+Author: Clayton Branstetter
+KUID: 3089206
+Date: 04/25/2022
+Lab: lab#09
+Last modified: 05/05/2022
+Purpose: BSTs Phase 2
+'''
+
 from Tree import *
 
 def format(file_name):
     with open(file_name, "r") as f: #open the file
         lines = f.read().split('\n')
-    
+
     i=0
     for line in lines:
         [US_name, number, JP_name] = line.split('\t')
@@ -24,7 +33,7 @@ def menu():
     print("invalid input\n")
     return menu()
 
-    
+
 def main():
     file_name = input("Enter the file name : ")
     main_pokedex = format(file_name)
@@ -65,7 +74,7 @@ def main():
                 Pokedex.postorder(print)
             else:
                 print('invalid input')
-        
+
         elif n == 4:
             key = input("Enter the id of the pokedex to remove : ")
             if key.isdigit():
@@ -79,7 +88,7 @@ def main():
                 copy = True
                 print("\nPokedex is successfully copied\n")
         else:return 0
-        
+
         n = menu()
 
 main()
